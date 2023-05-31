@@ -13,7 +13,7 @@ export const createTestimonial = async (req = request, res = response) => {
   try {
     const testimonialExist = await Testimonial.findOne({
       where: {
-        title: body.title,
+        city: body.city,
       },
     })
 

@@ -11,7 +11,7 @@ export const createPlan = async (req = request, res = response) => {
   const { body } = req
 
   try {
-    const planExist = await Discount.findOne({
+    const planExist = await Plan.findOne({
       where: {
         city: body.city,
       },
@@ -41,7 +41,7 @@ export const updatePlan = async (req = request, res = response) => {
 
     if (!plan) {
       return res.status(404).json({
-        msg: `Discount not found with this id: ${id}`,
+        msg: `No plan found with this id: ${id}`,
       })
     }
 
@@ -61,7 +61,7 @@ export const deletePlan = async (req = request, res = response) => {
 
   if (!plan) {
     return res.status(404).json({
-      msg: `Discount not found with this id: ${id}`,
+      msg: `Plan not found with this id: ${id}`,
     })
   }
 
